@@ -1,0 +1,9 @@
+<h4> <%= link_to "Go back home", lists_path  %> </h4>
+<div class="container">
+  <h1>Add a new bookmark:</h1>
+  <%= simple_form_for([@list, @bookmark]) do |f| %>
+    <%= f.association :movie %>
+    <%= f.input :comment %>
+    <%= f.submit %>
+  <% end %>
+</div>
