@@ -1,5 +1,26 @@
-<h4> <%= link_to "Go back home", lists_path  %> </h4>
-<div class="container">
+<div class="navbar-vanilla">
+    <a class="navbar-vanilla-section" href="#">
+      <img class="navbar-vanilla-logo" src="https://static.vecteezy.com/system/resources/previews/005/188/413/large_2x/cinema-logo-template-isolated-on-white-background-vector.jpg" alt="logo">
+      <h2 class="navbar-vanilla-brand" >Cinemania</h2>
+    </a>
+    <div class="navbar-vanilla-section">
+      <div class="navbar-vanilla-menu">
+        <%= link_to "Go back home", lists_path  %>
+        <a href="#">Delete a list</a>
+      </div>
+      <div class="navbar-vanilla-profile">
+        <%= image_tag('Screenshot 2023-05-11 at 7.05.05 pm.png', alt: 'Profile Picture') %>
+
+        <ul>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class="container mt-5 col-6">
   <h1>Add a new list:</h1>
   <%= simple_form_for(@list) do |f| %>
     <%= f.input :name %>

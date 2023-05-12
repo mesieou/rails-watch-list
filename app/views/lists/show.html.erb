@@ -1,15 +1,44 @@
-<h4> <%= link_to "Go back home", lists_path  %> </h4>
-<h4> <%= link_to "Add a new movie", new_list_bookmark_path(@list) %> </h4>
+<div class="navbar-vanilla">
+    <a class="navbar-vanilla-section" href="#">
+      <img class="navbar-vanilla-logo" src="https://static.vecteezy.com/system/resources/previews/005/188/413/large_2x/cinema-logo-template-isolated-on-white-background-vector.jpg" alt="logo">
+      <h2 class="navbar-vanilla-brand" >Cinemania</h2>
+    </a>
+    <div class="navbar-vanilla-section">
+      <div class="navbar-vanilla-menu">
+        <%= link_to "Add a new movie", new_list_bookmark_path(@list) %>
+        <%= link_to "Go back home", lists_path  %>
+      </div>
+      <div class="navbar-vanilla-profile">
+        <%= image_tag('Screenshot 2023-05-11 at 7.05.05 pm.png', alt: 'Profile Picture') %>
 
-<div class="container">
-  <h1> <%= @list.name %>:</h1>
-  <% @list.bookmarks.each do |bookmark| %>
-    <h3><%= bookmark.movie.title %></h3>
-    <p><%= bookmark.comment %></p>
-    <h4> <%= link_to "Delete a movie",
-         bookmark_path(bookmark),
-         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-     %>
-    </h4>
-  <% end %>
+        <ul>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+  <h1><%= @list.name %>:</h1>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="col mb-4">
+        <div class="card-pick">
+          <img src="/app/assets/images/Screenshot 2023-05-11 at 6.53.00 pm.png" alt="">
+          <div class="card-pick-info">
+            <h2><%= bookmark.movie.title %></h2>
+            <p><%= bookmark.comment %></p>
+            <h4>
+              <%= link_to "Delete a movie",
+                bookmark_path(bookmark),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+              %>
+            </h4>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

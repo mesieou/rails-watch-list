@@ -1,7 +1,36 @@
-<h4> <%= link_to "Add a new list", new_list_path %> </h4>
-<div class="container">
-  <h1>Your Lists:</h1>
-  <% @lists.each do |list| %>
-    <%= link_to list.name, list_path(list) %>
-  <% end %>
+<div class="navbar-vanilla">
+    <a class="navbar-vanilla-section" href="#">
+      <img class="navbar-vanilla-logo" src="https://static.vecteezy.com/system/resources/previews/005/188/413/large_2x/cinema-logo-template-isolated-on-white-background-vector.jpg" alt="logo">
+      <h2 class="navbar-vanilla-brand" >Cinemania</h2>
+    </a>
+    <div class="navbar-vanilla-section">
+      <div class="navbar-vanilla-menu">
+        <%= link_to "Add a new list", new_list_path %>
+        <a href="#">Delete a list</a>
+      </div>
+      <div class="navbar-vanilla-profile">
+        <%= image_tag('Screenshot 2023-05-11 at 7.05.05 pm.png', alt: 'Profile Picture') %>
+
+        <ul>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+    </div>
 </div>
+
+
+
+  <div class="container mt-3">
+    <h1>Your Lists:</h1>
+    <% @lists.each do |list| %>
+      <div class="card-pick">
+        <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/01/screenrant-best-movies-all-time-dark-knight-my-left-foot-toy-story-lord-of-the-rings-pans-labyrinth-godfather-casablanca-psycho.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5" alt="">
+        <div class="card-pick-info">
+          <h3><%= link_to list.name, list_path(list), class: "link-offset-2 link-underline link-underline-opacity-0" %></h3>
+          <p class="black">It goes up when you hover over it.</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
