@@ -26,7 +26,7 @@
     <h1>Your Lists:</h1>
     <% @lists.each do |list| %>
       <div class="card-pick">
-        <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/01/screenrant-best-movies-all-time-dark-knight-my-left-foot-toy-story-lord-of-the-rings-pans-labyrinth-godfather-casablanca-psycho.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5" alt="">
+        <%= list.photo.attached? ? cl_image_tag(list.photo.key) : image_tag('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>
         <div class="card-pick-info">
           <h3><%= link_to list.name, list_path(list), class: "link-offset-2 link-underline link-underline-opacity-0" %></h3>
           <p class="black">It goes up when you hover over it.</p>
