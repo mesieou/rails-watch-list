@@ -26,7 +26,7 @@
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col mb-4">
         <div class="card-pick">
-          <img src="/app/assets/images/Screenshot 2023-05-11 at 6.53.00 pm.png" alt="">
+          <%= image_tag bookmark.movie.poster_url %>
           <div class="card-pick-info">
             <h2><%= bookmark.movie.title %></h2>
             <p><%= bookmark.comment %></p>
