@@ -31,10 +31,15 @@
             <h2><%= bookmark.movie.title %></h2>
             <p><%= bookmark.comment %></p>
             <h4>
-              <%= link_to "Delete a movie",
-                bookmark_path(bookmark),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
-              %>
+              <%= link_to bookmark_path(bookmark),
+              method: :delete,
+              data: { turbo_confirm: "Are you sure?" },
+              title: "Delete",
+              "data-bs-toggle": "tooltip",
+              "data-bs-placement": "top",
+              "aria-label": "Delete" do %>
+              <i class="fa-solid fa-trash fa-lg"></i>
+              <% end %>
             </h4>
           </div>
         </div>

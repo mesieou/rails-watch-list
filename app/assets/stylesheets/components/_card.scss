@@ -18,6 +18,8 @@
   box-shadow: 0 0px 16px rgba(0,0,0,0.3);
   margin-bottom: 32px;
   width: 100;
+  color: navy;
+  font-weight: inherit;
 }
 .card-pick img {
   /*fixed*/
@@ -25,8 +27,7 @@
   min-height: 100px;
   flex-grow: 1;
   object-fit: cover;
-  /*customizable*/
-  object-position: 50% 50%;
+  object-position: top;
   border-radius: 4px 4px 0 0;
 }
 .card-pick-info {
