@@ -1,6 +1,6 @@
 module ApplicationHelper
   def generate_response
-    api_key = ENV.fetch("OPENAI_ACCESS_KEY")
+    api_key = ENV.fetch("OPENAI_API_KEY")
     engine = "text-davinci-003"
     prompt = "I have a meeting next weeek about concers related to RFP Evaluation, can you please provide a 3 objectives and an agenda"
 
